@@ -7,6 +7,7 @@ class IsOwnerOrIsAdmin(permissions.BasePermission):
     """
     Custom permission to only allow owners of an object or superusers to access it.
     """
+    message = "You must be the owner or a superuser to perform this action."
 
     def has_object_permission(self, request: Request, view: View, obj: any) -> bool:
         """
